@@ -12,5 +12,14 @@ class ZipCode extends Model
     public $timestamps=false;
 
     protected $guarded = ['*'];
+    protected $fillable = [
+        'idAsunto',
+        'descripcion',
+        'estatus',
+        'fechaEliminacion',
+        'idUsuarioAlta',
+        'idUsuarioMod',
+        'idUsuarioEliminacion'
+    ];
 
 }
