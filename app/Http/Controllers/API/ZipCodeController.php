@@ -61,12 +61,20 @@ class ZipCodeController extends Controller
 
             $result->settlements  = $settlements;
             $result->municipality = $municipality;
+                if (!empty($result)) {
+                    return response()->json($result);
+                }else{
+                    return response(0);
+                }
+        // dump($result);
 
-           return response()->json($result);
         }
-
-        return response()->json($datosCP);
-
+        if (!empty($datosCP)) {
+            return response()->json($datosCP);
+           }else{
+            return response(0);
+           }
+        // dump($datosCP);
     }
 
     function stripaccents($string)
